@@ -38,3 +38,18 @@ unemployment_avg_sorted <- unemployment_avg %>%
   arrange(unemployment_market_avg)
 print(unemployment_avg_sorted)
 View(unemployment_avg_sorted)
+
+
+
+City	Crimes per 100,000 people (2022)   #did graph in Excel
+Austin	4,143
+Houston 	5749.6
+Dallas/Fort Worth	4,619.70
+Los Angeles	3301
+Chicago 	3673
+DC	4230.7
+Philadelphia	5386.5
+New York	2885.4
+South Bay/ San Jose	3178.2
+San Francisco	6941.6
+Average of Sample	4,411
