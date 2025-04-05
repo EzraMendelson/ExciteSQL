@@ -1,0 +1,40 @@
+Leases <- read.csv("Leases.csv")
+print(Leases)
+
+factor(Unemployment$quarter)
+factor(Unemployment$state)
+
+mean(Unemployment$unemployment_rate)
+summary(Unemployment$unemployment_rate)
+
+mean(Unemployment$unemployment_rate, Unemployment$state)
+bystate <- sort(Unemployment$state)
+
+View(bystate)
+
+library(dplyr)
+
+market_avg <- Major_Market_Occupancy_Data_revised %>%
+  group_by(market) %>%
+  summarize(market_avg_occupancy = mean(avg_occupancy_proportion, na.rm = TRUE))
+
+print(market_avg)
+
+
+market_avg_sorted <- market_avg %>%
+  arrange(-market_avg_occupancy)
+
+print(market_avg_sorted)
+
+plot(market_avg_sorted)
+########
+unemployment_avg <- Unemployment %>%
+  group_by(state) %>%
+  summarize(unemployment_market_avg = mean(unemployment_rate), na.rm=TRUE)
+  
+print(unemployment_avg)
+
+unemployment_avg_sorted <- unemployment_avg %>%
+  arrange(unemployment_market_avg)
+print(unemployment_avg_sorted)
+View(unemployment_avg_sorted)
